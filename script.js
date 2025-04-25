@@ -1,63 +1,25 @@
-const questions = [
-    { question: "问题1", options: ["选项1", "选项2", "选项3", "选项4"] },
-    { question: "问题2", options: ["选项1", "选项2", "选项3", "选项4"] },
-    // 添加更多问题
-];
-
-function startTest() {
-    const infoForm = document.getElementById('infoForm');
-    const testDiv = document.getElementById('test');
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-
-    if (name && phone) {
-        infoForm.style.display = 'none';
-        testDiv.style.display = 'block';
-        renderQuestions();
-    } else {
-        alert('请填写姓名和电话号码');
-    }
-}
-
-function renderQuestions() {
-    const testDiv = document.getElementById('test');
-    questions.forEach((q, index) => {
-        const questionDiv = document.createElement('div');
-        questionDiv.classList.add('question');
-        questionDiv.innerHTML = `<p>${q.question}</p>`;
-        q.options.forEach((option, optionIndex) => {
-            const label = document.createElement('label');
-            const input = document.createElement('input');
-            input.type = 'radio';
-            input.name = `question${index}`;
-            input.value = option;
-            label.appendChild(input);
-            label.appendChild(document.createTextNode(option));
-            questionDiv.appendChild(label);
-            questionDiv.appendChild(document.createElement('br'));
-        });
-        testDiv.appendChild(questionDiv);
-    });
-
-    const submitButton = document.createElement('button');
-    submitButton.innerText = '提交';
-    submitButton.onclick = calculateResult;
-    testDiv.appendChild(submitButton);
-}
-
-function calculateResult() {
-    const resultDiv = document.getElementById('result');
-    const answers = [];
-    questions.forEach((q, index) => {
-        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-        if (selectedOption) {
-            answers.push(selectedOption.value);
-        }
-    });
-
-    // 这里可以根据答案计算结果
-    const result = "您的MBTI类型是: " + answers.join(', ');
-    resultDiv.innerText = result;
-    resultDiv.style.display = 'block';
-}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 测试题</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MBTI 测试题</h1>
+        <form id="testForm">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">电话号码:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <!-- 这里添加你的测试题 -->
+            <button type="button" id="submitBtn">提交测试</button>
+        </form>
+        <div id="qrcode"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator"></script>
+    <script src="script.js"></script>
+</body>
+</html>
