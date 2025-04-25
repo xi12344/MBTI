@@ -3,38 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBTI 测试</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .result {
-            font-weight: bold;
-        }
-    </style>
+    <title>MBTI 测试题</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>MBTI 测试</h1>
-    <form id="infoForm">
-        <label for="name">姓名:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="phone">电话号码:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
-        <button type="button" onclick="startTest()">开始测试</button>
-    </form>
-
-    <div id="test" style="display: none;">
-        <!-- 测试题将在这里动态生成 -->
+    <div class="container">
+        <h1>MBTI 测试题</h1>
+        <form id="testForm">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">电话号码:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <!-- 这里添加你的测试题 -->
+            <button type="button" id="submitBtn">提交测试</button>
+        </form>
+        <div id="qrcode"></div>
     </div>
-
-    <div id="result" class="result" style="display: none;">
-        <!-- 测试结果将在这里显示 -->
-    </div>
-
-    <script src="test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator"></script>
+    <script src="script.js"></script>
 </body>
 </html>
