@@ -238,5 +238,38 @@
    document.getElementById('qrcode').innerHTML = qr.createImgTag();
   }
  </script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>插入图片示例</title>
+  <style>
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    .responsive-img {
+      width: 90%;
+      max-width: 800px;
+      border: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>欢迎访问我的网站</h1>
+    <!-- 本地图片 -->
+    < img src="images/logo.png" alt="Logo" width="100">
+    <!-- 响应式图片 -->
+    < img class="responsive-img" src="images/banner.jpg" alt="横幅">
+    <!-- 背景图片 -->
+    <div style="
+      background-image: url('images/bg.jpg');
+      background-size: cover;
+      height: 400px;
+      margin: 20px 0;
+    "></div>
+  </div>
+</body>
+</html>
 </body>
 </html>
