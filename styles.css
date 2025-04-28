@@ -53,7 +53,7 @@ button:hover {
     margin-top: 20px;
 }
 /* 基础图片样式 */
-.mbti-chart-img {
+.二维码.jpg {
   max-width: 100%;    /* 图片最大宽度不超过容器 */
   height: auto;       /* 高度自动适应 */
   display: block;     /* 消除默认inline间隙 */
@@ -64,7 +64,7 @@ button:hover {
 
 /* 移动端优化 */
 @media (max-width: 768px) {
-  .mbti-chart-img {
+  .二维码.jpg{
     margin: 10px auto;
     border-radius: 4px;
   }
