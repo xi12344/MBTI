@@ -52,3 +52,20 @@ button:hover {
     text-align: center;
     margin-top: 20px;
 }
+/* 基础图片样式 */
+.mbti-chart-img {
+  max-width: 100%;    /* 图片最大宽度不超过容器 */
+  height: auto;       /* 高度自动适应 */
+  display: block;     /* 消除默认inline间隙 */
+  margin: 20px auto;  /* 上下20px，左右自动居中 */
+  border-radius: 8px; /* 圆角 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 柔和阴影 */
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .mbti-chart-img {
+    margin: 10px auto;
+    border-radius: 4px;
+  }
+}
