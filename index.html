@@ -237,12 +237,22 @@
    qr.make();
    document.getElementById('qrcode').innerHTML = qr.createImgTag();
   }
-<div class="test-intro">
-  <h2>请填写个人信息</h2>
-  <img src="images/.二维码.jpg" 
-       alt="mbti.测试结果" 
-       class="二维码.jpg">
-  <p>完成测试请扫码！</p>
+  <div class="test-intro">
+  <h2>MBTI人格测试结果填写</h2>
+  
+  <!-- 优化后的图片代码 -->
+  <picture>
+    <source srcset="images/%E4%BA%8C%E7%BB%B4%E7%A0%81.webp" type="image/webp">
+    <img src="images/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg"
+         alt="微信扫码填写MBTI测试个人信息"
+         class="qrcode-image"
+         width="200"
+         height="200"
+         loading="lazy"
+         decoding="async">
+  </picture>
+  
+  <p>完成测试即可查看你的专属类型！</p>
 </div>
  </script>
 </body>
