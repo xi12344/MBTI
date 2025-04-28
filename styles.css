@@ -52,20 +52,43 @@ button:hover {
     text-align: center;
     margin-top: 20px;
 }
-/* 基础图片样式 */
-.二维码.jpg {
-  max-width: 100%;    /* 图片最大宽度不超过容器 */
-  height: auto;       /* 高度自动适应 */
-  display: block;     /* 消除默认inline间隙 */
-  margin: 20px auto;  /* 上下20px，左右自动居中 */
-  border-radius: 8px; /* 圆角 */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 柔和阴影 */
+/* 二维码容器样式 */
+.qrcode-container {
+  text-align: center;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  max-width: 300px;
 }
 
-/* 移动端优化 */
+/* 核心图片样式 */
+.qrcode-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;      /* 保持比例填充 */
+  aspect-ratio: 1/1;        /* 强制1:1比例 */
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* 移动端适配 */
 @media (max-width: 768px) {
-  .二维码.jpg{
-    margin: 10px auto;
-    border-radius: 4px;
+  .qrcode-image {
+    max-width: 180px;
+    border-width: 1px;
   }
+}
+
+/* 图片加载动画 */
+.qrcode-image:not([loaded]) {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.qrcode-image[loaded] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
